@@ -39,7 +39,7 @@ const std::string ShrubberyCreationForm::getTarget() const { return this->_targe
 
 void ShrubberyCreationForm::execute(const Bureaucrat &executor) const {
 	checkExecutable(executor);
-	std::ofstream file(this->_target + "_shrubbery");
+	std::ofstream file((this->_target + "_shrubbery").c_str());
     if (!file)
 		throw std::runtime_error("Cannot open \"" + this->_target + "_shrubbery" + "\".");
     file << "       /_\\\n"
